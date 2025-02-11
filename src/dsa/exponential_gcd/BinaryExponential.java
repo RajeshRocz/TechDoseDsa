@@ -1,4 +1,4 @@
-package dsa;
+package dsa.exponential_gcd;
 
 public class BinaryExponential {
 

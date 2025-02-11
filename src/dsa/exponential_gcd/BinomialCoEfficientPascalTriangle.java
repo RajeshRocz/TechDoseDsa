@@ -1,4 +1,4 @@
-package dsa;
+package dsa.exponential_gcd;
 
 
 //Find NCR=(N!)/(N-R)! R! using pascal triangle

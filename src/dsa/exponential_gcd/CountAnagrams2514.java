@@ -1,4 +1,4 @@
-package dsa;
+package dsa.exponential_gcd;
 
 import java.util.HashMap;
 import java.util.Map;
