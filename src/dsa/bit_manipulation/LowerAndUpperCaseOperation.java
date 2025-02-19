@@ -8,6 +8,7 @@ public class LowerAndUpperCaseOperation {
         System.out.println("ToUpperCase of j: " + toUpperCase('j'));
         System.out.println("ToConvertCase of r: " + convertCase('r'));
 
+
     }
 
     private static char toLowerCase(char c) {
