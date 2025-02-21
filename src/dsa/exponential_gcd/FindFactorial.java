@@ -20,6 +20,8 @@ public class FindFactorial {
         System.out.println(Math.pow(10,Math.ceil(Math.log10(1001))));
 
         System.out.println((int) 1e9 + 7);
+
+        System.out.println(Math.ceil(Math.log10(10010)));
     }
 
     private static long getExponenetial(long base, long power, int m){
