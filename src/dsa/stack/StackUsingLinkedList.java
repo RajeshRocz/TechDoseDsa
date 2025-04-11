@@ -1,5 +1,9 @@
 package dsa.stack;
 
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
 public class StackUsingLinkedList {
     public static void main(String[] args) {
         StackLinkedList stack = new StackLinkedList();
@@ -9,6 +13,11 @@ public class StackUsingLinkedList {
         stack.push(10);
         stack.push(20);
         stack.push(30);
+        stack.print();
+        stack.reverse();
+        System.out.println("");
+        stack.print();
+        System.out.println("");
         System.out.println("stack pop:" + stack.pop());
         System.out.println("stack peek:" + stack.peek());
         System.out.println("isEmpty:" + stack.isEmpty());
@@ -61,6 +70,47 @@ class StackLinkedList {
         top = top.next;
         size--;
         return value;
+    }
+
+    public void print(){
+        Node temp=top;
+        while(temp!=null){
+            System.out.print(temp.value+"->");
+            temp=temp.next;
+        }
+    }
+
+    public int carFleet(int target, int[] position, int[] speed) {
+        Map<Integer, Integer> positionMap = new TreeMap<>();
+        for (int i = 0; i < position.length; i++) {
+            positionMap.put(position[i], speed[i]);
+        }
+
+        Stack<Double> stack = new Stack<>();
+
+        for (Map.Entry<Integer, Integer> entry:positionMap.entrySet()) {
+
+            Double time = (target - entry.getKey()) / (double) entry.getValue();
+            if (!stack.isEmpty() && time >= stack.peek()) {
+                stack.pop();
+            }
+
+            stack.push(time);
+
+        }
+        return stack.size();
+    }
+
+    public void reverse(){
+        Node currentNode=top;
+        Node prev=null;
+        while(currentNode!=null){
+            Node nextNode=currentNode.next;
+            currentNode.next=prev;
+            prev=currentNode;
+            currentNode=nextNode;
+        }
+        top=prev;
     }
 
 }
