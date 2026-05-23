@@ -11,6 +11,7 @@ public class FindShortestPalindrome {
         String original = s;
         s = String.valueOf(new StringBuilder(s).reverse());
         String tempString = original + "*" + s;
+
         int[] lps = getLpsArray(tempString);
 
         int difference = s.length() - lps[tempString.length() - 1];
